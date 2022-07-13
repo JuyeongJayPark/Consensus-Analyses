@@ -1,0 +1,5 @@
+workdir: /data05/project/jypark/WGRS_NonHuman/TBD220692_15349_SacbroodVirus_20220711
+ref: /data05/project/jypark/WGRS_NonHuman/TBD220692_15349_SacbroodVirus_20220711/Reference/SacbroodVirus.fasta
+samples: 
+    23_AmKor2_1
+    72_AmKor31_1
