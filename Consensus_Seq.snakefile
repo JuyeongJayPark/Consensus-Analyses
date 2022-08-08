@@ -53,6 +53,7 @@ rule gatk_vcf_index:
 rule gatk_consensus_seq:
     input:
         vcf_gz = "OutPut/09.GenotypeVariant/{sample}/{sample}.vcf.gz",
+        tbi = "OutPut/09.GenotypeVariant/{sample}/{sample}.vcf.gz.tbi"
     output:
         consensus_fa = "OutPut/23.Consensus/{sample}/{sample}.gatk.consensus.fa"
     params:
@@ -68,7 +69,7 @@ rule bcftools_call:
     params:
         reference = config["ref"]
     shell:
-        "bcftools mpileup -Oz -t DP,DPR,DV,DP4,SP,AD,ADF,ADR -f {params.reference} {input.bam} | bcftools call -mv -Oz -o {output.vcf_gz}"
+        "bcftools mpileup -Oz -a DP,AD,ADF,ADR -f {params.reference} {input.bam} | bcftools call -mv -Oz -o {output.vcf_gz}"
 
 rule bcftools_vcf_index:
     input:
@@ -81,6 +82,7 @@ rule bcftools_vcf_index:
 rule bcftools_consensus_seq:
     input:
         vcf_gz = "OutPut/24.Bcftools_VCF/{sample}/{sample}.vcf.gz",
+        tbi = "OutPut/24.Bcftools_VCF/{sample}/{sample}.vcf.gz.tbi"
     output:
         consensus_fa = "OutPut/23.Consensus/{sample}/{sample}.bcftools.consensus.fa"
     params:
