@@ -109,7 +109,7 @@ rule upload_ftp:
         base_count_xls = "OutPut/25.Base_Count/{sample}/{sample}.basecall.xls"
     output:
         ln_gatk_vcf = "OutPut/27.FTP/{sample}/02_vcf_file/{sample}.gatk.vcf",
-        ln_bcftools_vcf = "OutPut/27.FTP/{sample}/02_vcf_file/{sample}.bcftools.vcf",
+        ln_bcftools_vcf = "OutPut/27.FTP/{sample}/02_vcf_file/{sample}.bcftools.vcf.gz",
         ln_gatk_consensus_seq = "OutPut/27.FTP/{sample}/05_consensus_file/{sample}.gatk.consensus.fa",
         ln_bcftools_consensus_seq = "OutPut/27.FTP/{sample}/05_consensus_file/{sample}.bcftools.consensus.fa",
         ln_base_count_xls = "OutPut/27.FTP/{sample}/06_base_count/{sample}.basecall.xls"
