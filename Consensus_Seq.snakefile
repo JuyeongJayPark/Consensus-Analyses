@@ -29,7 +29,7 @@ rule all:
         expand("OutPut/23.Consensus/{sample}/{sample}.bcftools.consensus.fa", sample = samples),
         expand("OutPut/25.Base_Count/{sample}/{sample}.basecall.xls", sample = samples),
         expand("OutPut/27.FTP/{sample}/02_vcf_file/{sample}.gatk.vcf", sample = samples),
-        expand("OutPut/27.FTP/{sample}/02_vcf_file/{sample}.bcftools.vcf", sample = samples),
+        expand("OutPut/27.FTP/{sample}/02_vcf_file/{sample}.bcftools.vcf.gz", sample = samples),
         expand("OutPut/27.FTP/{sample}/05_consensus_file/{sample}.gatk.consensus.fa", sample = samples),
         expand("OutPut/27.FTP/{sample}/05_consensus_file/{sample}.bcftools.consensus.fa", sample = samples),
         expand("OutPut/27.FTP/{sample}/06_base_count/{sample}.basecall.xls", sample = samples)
